@@ -71,7 +71,17 @@ body {
 <div style="position: absolute; bottom: 5px; text-align: center; width: 95%; z-index: -1">
   <a href="http://www.sweethome3d.com">Sweet Home 3D</a> HTML5 Viewer / Version 1.9.1 - Distributed under GNU General Public License
 </div>
-
+<script type="text/javascript">
+  var homeUrl = "NUESTRA%20CASA.zip";
+  var onerror = function(err) {
+      if (err == "No WebGL") {
+        alert("Sorry, your browser doesn't support WebGL.");
+      } else {
+        console.log(err.stack);
+        alert("Error: " + (err.message  ? err.constructor.name + " " +  err.message  : err)
+              + (window.location.href.indexOf("file://") === 0 ? "\nCheck your browser is allowed to access local files." : ""));
+      }
+    };
 <!-- Copy the following script to view your home in the previous canvas -->
 <script type="text/javascript">
   var homeUrl = "NUESTRA%20CASA.zip";
